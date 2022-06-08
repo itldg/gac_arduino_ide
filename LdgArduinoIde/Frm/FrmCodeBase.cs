@@ -52,6 +52,10 @@ namespace LdgArduinoIde
         }
         void InitFloder(string path,TreeNode tnParent=null)
         {
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
             if (tnParent == null)
             {
                 treeView1.Nodes.Clear();
