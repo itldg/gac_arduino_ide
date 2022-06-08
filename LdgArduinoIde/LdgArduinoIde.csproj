@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B5E814B6-D346-4471-851A-73985A9A56C5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LdgArduinoIde</RootNamespace>
+    <AssemblyName>LdgArduinoIde</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>arduino_128px_1171938_easyicon.net.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutocompleteMenu-ScintillaNET">
+      <HintPath>bin\Debug\System\Lib\AutocompleteMenu-ScintillaNET.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="ScintillaNET, Version=3.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System\Lib\ScintillaNET.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>bin\Debug\System\Lib\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoComplete\GacHelpComplete.cs" />
+    <Compile Include="Frm\FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmAbout.designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmCode.Designer.cs">
+      <DependentUpon>FrmCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmCodeBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmCodeBase.Designer.cs">
+      <DependentUpon>FrmCodeBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmFindAndReplace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmFindAndReplace.Designer.cs">
+      <DependentUpon>FrmFindAndReplace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmGoToLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmGoToLine.Designer.cs">
+      <DependentUpon>FrmGoToLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmIdePath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmIdePath.Designer.cs">
+      <DependentUpon>FrmIdePath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmLog.Designer.cs">
+      <DependentUpon>FrmLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmOption.Designer.cs">
+      <DependentUpon>FrmOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\DockContentEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmSerial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmSerial.Designer.cs">
+      <DependentUpon>FrmSerial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\ArduinoReferences.cs" />
+    <Compile Include="Helper\BinaryFormat.cs" />
+    <Compile Include="Helper\Class_to_xml.cs" />
+    <Compile Include="Helper\XmlHelper.cs" />
+    <Compile Include="AutoComplete\ArduinoAutocompleteItem.cs" />
+    <Compile Include="Ide\ArduinoIde.cs" />
+    <Compile Include="Ide\IdeConfig.cs" />
+    <Compile Include="INIFileHelper.cs" />
+    <Compile Include="LdgArduino.cs" />
+    <Compile Include="LdgIdeHelper.cs" />
+    <Compile Include="LdgSetting.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Frm\FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmCode.resx">
+      <DependentUpon>FrmCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmCodeBase.resx">
+      <DependentUpon>FrmCodeBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmFindAndReplace.resx">
+      <DependentUpon>FrmFindAndReplace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmGoToLine.resx">
+      <DependentUpon>FrmGoToLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmIdePath.resx">
+      <DependentUpon>FrmIdePath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmLog.resx">
+      <DependentUpon>FrmLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmOption.resx">
+      <DependentUpon>FrmOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\DockContentEx.resx">
+      <DependentUpon>DockContentEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmSerial.resx">
+      <DependentUpon>FrmSerial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Welcome.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="arduino_128px_1171938_easyicon.net.ico" />
+    <None Include="Resources\库存.png" />
+    <None Include="Resources\函数.png" />
+    <None Include="Resources\类别.png" />
+    <None Include="Resources\声明.png" />
+    <None Include="Resources\变量.png" />
+    <None Include="Resources\输入.png" />
+    <None Include="Resources\枚举.png" />
+    <None Include="Resources\书签.png" />
+    <None Include="Resources\Arduino.jpg" />
+    <None Include="Resources\设置.png" />
+    <None Include="Resources\打开.png" />
+    <None Include="Resources\新建.png" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\重做.png" />
+    <None Include="Resources\撤销.png" />
+    <None Include="Resources\串口.png" />
+    <None Include="Resources\验证.png" />
+    <None Include="Resources\上传.png" />
+    <None Include="Resources\常量.png" />
+    <None Include="Resources\分支.png" />
+    <None Include="Resources\属性.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GacHelper\GacHelper.csproj">
+      <Project>{90c1de15-cc61-48a0-ae62-591856c74550}</Project>
+      <Name>GacHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
