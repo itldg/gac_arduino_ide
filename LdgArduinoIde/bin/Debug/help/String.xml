@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GacHelp xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <class name="String" summary="字符串类" static="false">
+    <member name="charAt" isattr="false">
+      <summary>访问字符串的特定字符。</summary>
+      <param datatype="unsigned int" name="n" default="">要读取第几个字符</param>
+      <returns datatype="char">字符串的第n个字符。</returns>
+    </member>
+    <member name="compareTo" isattr="false">
+      <summary>比较两个字符串，测试一个字符串在另一个字符串之前还是之后，或者它们是否相等。使用字符的ASCII值逐个字符比较字符串。例如，这意味着“ a”在“ b”之前但在“ A”之后。数字先于字母。</summary>
+      <param datatype="String" name="myString2" default="">另一个类型的变量String。</param>
+      <returns datatype="int">
+        负数：如果myString在myString2之前。
+        0：如果String等于myString2。
+        正数：如果myString在myString2之后。
+      </returns>
+    </member>
+    <member name="concat" isattr="false">
+      <summary>将参数附加到字符串。</summary>
+      <param datatype="String" name="parameter" default="">要追加的数据,允许的数据类型：String，string，char，byte，int，unsigned int，long，unsigned long，float，double，</param>
+      <returns datatype="bool">
+        true：成功。
+        false：失败（在这种情况下，字符串保持不变）。
+      </returns>
+    </member>
+    <member name="c_str" isattr="false">
+      <summary>将String的内容转换为C样式，以null终止的字符串。请注意，这可以直接访问内部String缓冲区，因此应谨慎使用。特别是，永远不要通过返回的指针修改字符串。当您修改String对象或将其销毁时，以前由c_str（）返回的任何指针都将变为无效，并且不应再使用。</summary>
+      <returns datatype="">指向调用字符串的C样式版本的指针。</returns>
+    </member>
+    <member name="endsWith" isattr="false">
+      <summary>测试一个字符串是否以另一个字符串的字符结尾。</summary>
+      <param datatype="String" name="myString2" default="">另一个类型的变量String。</param>
+      <returns datatype="bool">
+        true：如果myString以myString2的字符结尾。
+        false： 除此以外。
+      </returns>
+    </member>
+    <member name="equals" isattr="false">
+      <summary>比较两个字符串是否相等。比较是区分大小写的，这意味着字符串“ hello”不等于字符串“ HELLO”。</summary>
+      <param datatype="String" name="myString2" default="">另一个类型的变量String。</param>
+      <returns datatype="bool">
+        true：如果string等于string2。
+        false： 除此以外。
+      </returns>
+    </member>
+    <member name="equalsIgnoreCase" isattr="false">
+      <summary>比较两个字符串是否相等。比较不区分大小写，这意味着String（“ hello”）等于String（“ HELLO”）。</summary>
+      <param datatype="String" name="myString2" default="">另一个类型的变量String。</param>
+      <returns datatype="bool">
+        true：如果myString等于myString2（忽略大小写）。
+        false： 除此以外。
+      </returns>
+    </member>
+    <member name="getBytes" isattr="false">
+      <summary>将字符串的字符复制到提供的缓冲区中。</summary>
+      <param datatype="byte" name="buf" default="">将字符复制到的缓冲区。</param>
+      <param datatype="unsigned int" name="len" default="">缓冲区的大小。</param>
+      <returns datatype=""></returns>
+    </member>
+    <member name="indexOf" isattr="false">
+      <summary>在另一个字符串中找到一个字符或字符串。默认情况下，搜索从String的开头开始，但也可以从给定的索引开始，从而允许查找字符或String的所有实例。</summary>
+      <param datatype="String" name="val" default="">要搜索的值。允许的数据类型：char，String。</param>
+      <param datatype="int" name="from" default="0">从中开始搜索的索引。</param>
+      <returns datatype="int">字符串中val的索引，如果未找到则为-1。</returns>
+    </member>
+    <member name="lastIndexOf" isattr="false">
+      <summary>在另一个字符串中找到一个字符或字符串。默认情况下，搜索从String的末尾开始，但是也可以从给定的索引向后搜索，从而可以定位字符或String的所有实例。</summary>
+      <param datatype="String" name="val" default="">要搜索的值。允许的数据类型：char，String。</param>
+      <param datatype="int" name="from" default="0">从中开始搜索的索引。</param>
+      <returns datatype="int">字符串中val的索引，如果未找到则为-1。</returns>
+    </member>
+    <member name="length" isattr="false">
+      <summary>返回字符串的长度，以字符为单位。（请注意，这不包括结尾的空字符。）</summary>
+      <returns datatype="int">字符串的长度（以字符为单位）。</returns>
+    </member>
+    <member name="remove" isattr="false">
+      <summary>修改字符串，从提供的索引到字符串的末尾或从提供的索引到索引加计数的字符除去字符。</summary>
+      <param datatype="unsigned int" name="index" default="">开始删除过程的位置（零索引）。</param>
+      <param datatype="unsigned int" name="len" default="之后的全部字符">要删除的字符数。</param>
+      <returns datatype=""></returns>
+    </member>
+    <member name="replace" isattr="false">
+      <summary>字符串replace（）函数允许您将给定字符的所有实例替换为另一个字符。您还可以使用replace将String的子字符串替换为其他子字符串。</summary>
+      <param datatype="String" name="substring1" default="">想要替换的字符串</param>
+      <param datatype="String" name="substring2" default="">替换为的字符串</param>
+      <returns datatype=""></returns>
+    </member>
+    <member name="reserve" isattr="false">
+      <summary>在内存中分配缓冲区以处理字符串。</summary>
+      <param datatype="unsigned int" name="size" default="">要为String操作保存的内存中的字节数。</param>
+      <returns datatype=""></returns>
+    </member>
+    <member name="setCharAt" isattr="false">
+      <summary>设置字符串的字符。对字符串现有长度以外的索引没有影响。</summary>
+      <param datatype="unsigned int" name="index" default="">设置字符的索引。</param>
+      <param datatype="char" name="c" default="">要存储到给定位置的字符。</param>
+      <returns datatype=""></returns>
+    </member>
+    <member name="startsWith" isattr="false">
+      <summary>测试一个字符串是否以另一个字符串的字符开头。</summary>
+      <param datatype="String" name="myString2" default="">另一个类型的变量String。</param>
+      <returns datatype="bool">
+        true：如果myString以myString2的字符开头。
+        false： 除此以外
+      </returns>
+    </member>
+    <member name="substring" isattr="false">
+      <summary>获取字符串的子字符串。起始索引是包含的（相应的字符包含在子字符串中），但可选的结束索引是专有的（相应的字符不包含在子字符串中）。如果省略了结束索引，则子字符串将继续到String的末尾。</summary>
+      <param datatype="unsigned int" name="from" default="">开始于子字符串的索引。</param>
+      <param datatype="unsigned int" name="to" default="到字符结尾">结束子字符串之前的索引。</param>
+      <returns datatype="String">子字符串。</returns>
+    </member>
+    <member name="toCharArray" isattr="false">
+      <summary>把string拷贝char中，toCharArray函数是字符串处理中常用的一个函数，你可以把他当成string转char[]的转换函数，或者复制文字的函数，他的功能和getBytes()非常相似，toCharArray()函数转换后是呈现文字，而getBytes()函数转换后是呈现数字。
+      </summary>
+      <param datatype="char" name="buf" default="">指定的char[]的位置，注意char[]的空间，一定要等于或大于复制的大小，不然存储器和程序都会产生不可预期的问题。</param>
+      <param datatype="unsigned int" name="len" default="">要复制的字符串长度。</param>
+      <returns datatype=""></returns>
+    </member>
+    <member name="toDouble" isattr="false">
+      <summary>将有效的String转换为double。输入的字符串应以数字开头。如果字符串包含非数字字符，则该函数将停止执行转换。例如，字符串“ 123.45”，“ 123”和“ 123fish”分别转换为123.45、123.00和123.00。注意，“ 123.456”近似为123.46。还要注意，浮点数的精度只有6-7个十进制数字，较长的字符串可能会被截断。</summary>
+      <returns datatype="double">如果由于字符串不是以数字开头而无法执行有效的转换，则返回零。</returns>
+    </member>
+    <member name="toInt" isattr="false">
+      <summary>将有效的String转换为整数。输入的String应该以整数开头。如果字符串包含非整数，则该函数将停止执行转换。</summary>
+      <returns datatype="long">如果由于字符串不是以整数开头而无法执行有效的转换，则返回零。</returns>
+    </member>
+    <member name="toFloat" isattr="false">
+      <summary>将有效的String转换为float。输入的字符串应以数字开头。如果字符串包含非数字字符，则该函数将停止执行转换。例如，字符串“ 123.45”，“ 123”和“ 123fish”分别转换为123.45、123.00和123.00。注意，“ 123.456”近似为123.46。还要注意，浮点数的精度只有6-7个十进制数字，较长的字符串可能会被截断。</summary>
+      <returns datatype="float">如果由于字符串不是以数字开头而无法执行有效的转换，则返回零。</returns>
+    </member>
+    <member name="toLowerCase" isattr="false">
+      <summary>获取小写形式的字符串。从1.0开始，toLowerCase（）会在适当位置修改String，而不是返回一个新的String。</summary>
+      <returns datatype=""></returns>
+    </member>
+    <member name="toUpperCase" isattr="false">
+      <summary>获取字符串的大写版本。从1.0开始，toUpperCase（）会在适当位置修改String，而不是返回一个新的String。</summary>
+      <returns datatype=""></returns>
+    </member>
+    <member name="trim" isattr="false">
+      <summary>获取删除了所有前导和尾随空格的String版本。从1.0开始，trim（）会在适当位置修改String，而不是返回一个新的String。</summary>
+      <returns datatype=""></returns>
+    </member>
+  </class>
+  <member name="String" isattr="false">
+    <summary>构造String类的实例。有多种版本可以从不同的数据类型构造字符串（即，将它们格式化为字符序列）</summary>
+    <param datatype="char" name="var" default="">要格式化为字符串的变量。允许的数据类型：字符串，字符，字节，整数，长整数，无符号整数，无符号长整数，浮点数，双精度数。</param>
+    <returns datatype="String"></returns>
+  </member>
+  <member name="String" isattr="false">
+    <summary>构造String类的实例。有多种版本可以从不同的数据类型构造字符串（即，将它们格式化为字符序列）</summary>
+    <param datatype="char" name="var" default="">要格式化为字符串的变量。允许的数据类型：字符串，字符，字节，整数，长整数，无符号整数，无符号长整数，浮点数，双精度数。</param>
+    <param datatype="" name="base" default="">（可选）格式化整数值的基础。</param>
+    <returns datatype="String"></returns>
+  </member>
+  <member name="String" isattr="false">
+    <summary>构造String类的实例。有多种版本可以从不同的数据类型构造字符串（即，将它们格式化为字符序列）</summary>
+    <param datatype="char" name="var" default="">要格式化为字符串的变量。允许的数据类型：浮点数，双精度数。</param>
+    <param datatype="int" name="decimalPlaces" default="">仅当val为float或double时。所需的小数位。</param>
+    <returns datatype="String"></returns>
+  </member>
+</GacHelp>

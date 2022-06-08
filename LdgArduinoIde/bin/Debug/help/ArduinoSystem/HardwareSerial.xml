@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GacHelp xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FileName>help\ArduinoSystem\HardwareSerial.xml</FileName>
+  <inlude>inttypes</inlude>
+  <inlude>Stream</inlude>
+  <class name="HardwareSerial" summary="" static="false">
+    <member name="uint8_t" static="false" isattr="false">
+      <summary />
+      <returns datatype="volatile" />
+    </member>
+    <member name="uint8_t" static="false" isattr="false">
+      <summary />
+      <returns datatype="volatile" />
+    </member>
+    <member name="uint8_t" static="false" isattr="false">
+      <summary />
+      <returns datatype="volatile" />
+    </member>
+    <member name="begin" static="false" isattr="false">
+      <summary />
+      <returns datatype="void" />
+      <param datatype="unsigned long" name="baud" default="" />
+    </member>
+    <member name="begin" static="false" isattr="false">
+      <summary />
+      <returns datatype="void" />
+      <param datatype="unsigned" name="long" default="" />
+      <param datatype="" name="uint8_t" default="" />
+    </member>
+    <member name="end" static="false" isattr="false">
+      <summary />
+      <returns datatype="void" />
+    </member>
+    <member name="write" static="false" isattr="false">
+      <summary />
+      <returns datatype="inline size_t" />
+      <param datatype="unsigned long" name="n" default="" />
+    </member>
+    <member name="write" static="false" isattr="false">
+      <summary />
+      <returns datatype="inline size_t" />
+      <param datatype="long" name="n" default="" />
+    </member>
+    <member name="write" static="false" isattr="false">
+      <summary />
+      <returns datatype="inline size_t" />
+      <param datatype="unsigned int" name="n" default="" />
+    </member>
+    <member name="write" static="false" isattr="false">
+      <summary />
+      <returns datatype="inline size_t" />
+      <param datatype="int" name="n" default="" />
+    </member>
+    <member name="Print" static="false" isattr="false">
+      <summary />
+      <returns datatype="using" />
+    </member>
+    <member name="bool" static="false" isattr="false">
+      <summary />
+      <returns datatype="operator" />
+    </member>
+    <member name="_rx_complete_irq" static="false" isattr="false">
+      <summary />
+      <returns datatype="inline void" />
+      <param datatype="" name="" default="" />
+    </member>
+    <member name="_tx_udr_empty_irq" static="false" isattr="false">
+      <summary />
+      <returns datatype="void" />
+      <param datatype="" name="" default="" />
+    </member>
+    <inheritance>Stream</inheritance>
+  </class>
+  <member name="HardwareSerial" static="false" isattr="false">
+    <summary />
+    <returns datatype="inline" />
+  </member>
+  <extern name="Serial" class="HardwareSerial" />
+  <extern name="Serial1" class="HardwareSerial" />
+  <extern name="Serial2" class="HardwareSerial" />
+  <extern name="Serial3" class="HardwareSerial" />
+  <define value="16" name="SERIAL_TX_BUFFER_SIZE" />
+  <define value="64" name="SERIAL_TX_BUFFER_SIZE" />
+  <define value="16" name="SERIAL_RX_BUFFER_SIZE" />
+  <define value="64" name="SERIAL_RX_BUFFER_SIZE" />
+  <define value="0x00" name="SERIAL_5N1" />
+  <define value="0x02" name="SERIAL_6N1" />
+  <define value="0x04" name="SERIAL_7N1" />
+  <define value="0x06" name="SERIAL_8N1" />
+  <define value="0x08" name="SERIAL_5N2" />
+  <define value="0x0A" name="SERIAL_6N2" />
+  <define value="0x0C" name="SERIAL_7N2" />
+  <define value="0x0E" name="SERIAL_8N2" />
+  <define value="0x20" name="SERIAL_5E1" />
+  <define value="0x22" name="SERIAL_6E1" />
+  <define value="0x24" name="SERIAL_7E1" />
+  <define value="0x26" name="SERIAL_8E1" />
+  <define value="0x28" name="SERIAL_5E2" />
+  <define value="0x2A" name="SERIAL_6E2" />
+  <define value="0x2C" name="SERIAL_7E2" />
+  <define value="0x2E" name="SERIAL_8E2" />
+  <define value="0x30" name="SERIAL_5O1" />
+  <define value="0x32" name="SERIAL_6O1" />
+  <define value="0x34" name="SERIAL_7O1" />
+  <define value="0x36" name="SERIAL_8O1" />
+  <define value="0x38" name="SERIAL_5O2" />
+  <define value="0x3A" name="SERIAL_6O2" />
+  <define value="0x3C" name="SERIAL_7O2" />
+  <define value="0x3E" name="SERIAL_8O2" />
+</GacHelp>

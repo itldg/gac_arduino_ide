@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GacHelp xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FileName>help\ArduinoSystem\Arduino.xml</FileName>
+  <inlude>stdlib</inlude>
+  <inlude>stdbool</inlude>
+  <inlude>string</inlude>
+  <inlude>math</inlude>
+  <inlude>pgmspace</inlude>
+  <inlude>io</inlude>
+  <inlude>interrupt</inlude>
+  <inlude>binary</inlude>
+  <inlude>WCharacter</inlude>
+  <inlude>WString</inlude>
+  <inlude>HardwareSerial</inlude>
+  <inlude>USBAPI</inlude>
+  <inlude>pins_arduino</inlude>
+  <extern name="uint16_t" class="const" />
+  <extern name="uint16_t" class="const" />
+  <extern name="uint16_t" class="const" />
+  <extern name="uint8_t" class="const" />
+  <extern name="uint8_t" class="const" />
+  <extern name="uint8_t" class="const" />
+  <define value="0x1" name="HIGH">HIGH（相对于引脚）的含义有所不同，具体取决于引脚是设置为INPUT还是OUTPUT。
+    当销被配置为INPUT与pinMode()和与读digitalRead()，Arduino的（的ATmega）将报告HIGH，如果：
+引脚上存在大于3.0V的电压（5V板）
+引脚上存在大于2.0V伏的电压（3.3V板）
+引脚也可以配置为带有的输入pinMode()，然后通过设置为高电平digitalWrite()。
+这将使能内部20K上拉电阻，除非外部电路将其拉高，否则它将将输入引脚上拉至HIGH读数LOW。
+也可以通过将其INPUT_PULLUP作为参数传递给pinMode()函数来完成此操作，
+如下面进一步“定义数字引脚模式：INPUT，INPUT_PULLUP和OUTPUT”一节中更详细说明的那样。
+当一个引脚配置为使用时pinMode()，并设置为HIGH使用时digitalWrite()，该引脚位于：
+5伏（5V板）
+3.3伏（3.3V板）
+在这种状态下，它可以提供电流，例如点亮通过串联电阻接地的LED。</define>
+  <define value="0x0" name="LOW" >LOW取决于针脚设置为INPUT还是，的含义也有不同的含义OUTPUT。
+  当销被配置为INPUT与pinMode()和与读digitalRead()，Arduino的（的ATmega）将报告如果LOW：
+引脚上存在小于1.5V的电压（5V板）
+引脚上存在小于1.0V（大约）的电压（3.3V板）
+当一个引脚配置OUTPUT为时pinMode()，设置LOW为时digitalWrite()，该引脚为0伏（5V和3.3V板）。
+在这种状态下，它可以吸收电流，例如，点亮通过串联电阻连接至+5伏（或+3.3伏）的LED。</define>
+  <define value="0x0" name="INPUT">配置为Arduino的（的ATmega）引脚INPUT与pinMode()所述要被在一个高阻抗状态。
+  配置为的引脚INPUT对要采样的电路的要求极小，相当于引脚前面有一个100兆欧的串联电阻。
+  这使它们对于读取传感器很有用。
+如果您将引脚配置为INPUT，并且正在读取开关，则当开关处于断开状态时，输入引脚将“悬空”，从而导致不可预测的结果。
+为了确保开关断开时的读数正确，必须使用上拉或下拉电阻。
+该电阻的目的是在开关断开时将引脚拉至已知状态。通常选择一个10 K欧姆的电阻，因为它的阻值足够低，可以可靠地防止输入悬空，
+同时，该阻值也要足够高，以使开关闭合时不会消耗太多电流。有关更多信息，请参见《数字读串行》教程。
+如果使用下拉电阻，则输入引脚将LOW在开关断开和HIGH闭合时输入。
+如果使用上拉电阻，则输入引脚将HIGH在开关断开和LOW闭合时输入。</define>
+  <define value="0x1" name="OUTPUT">配置为销OUTPUT与pinMode()所述要被在一个低阻抗状态。
+  这意味着它们可以为其他电路提供大量电流。ATmega引脚可以向其他设备/电路提供（提供电流）或吸收（吸收电流）高达40 mA（毫安）的电流。
+  这使它们对于为LED供电很有用，因为LED通常使用小于40 mA的电流。大于40 mA的负载（例如，电动机）将需要晶体管或其他接口电路。
+如果将配置为输出的引脚连接到接地或正电源轨，则可能会损坏或破坏它们。</define>
+  <define value="" name="INPUT_PULLUP">Arduino上的ATmega微控制器具有您可以访问的内部上拉电阻（内部连接至电源的电阻）。
+如果您希望使用这些电阻而不是外部上拉电阻，则可以使用中的INPUT_PULLUP参数pinMode()。
+有关使用中的示例，请参见“ 输入上拉串行”教程。
+配置为输入与任一销INPUT或INPUT_PULLUP可被损坏或破坏，
+如果它们连接到低于地电压（负电压）或正电力轨（5V或3V）以上的电压。</define>
+  <define value="3" name="PI" />
+  <define value="1" name="HALF_PI" />
+  <define value="6" name="TWO_PI" />
+  <define value="0" name="DEG_TO_RAD" />
+  <define value="57" name="RAD_TO_DEG" />
+  <define value="2" name="EULER" />
+  <define value="0x0" name="SERIAL" />
+  <define value="0x1" name="DISPLAY" />
+  <define value="0" name="LSBFIRST" />
+  <define value="1" name="MSBFIRST" />
+  <define value="1" name="CHANGE" />
+  <define value="2" name="FALLING" />
+  <define value="3" name="RISING" />
+  <define value="0" name="DEFAULT" />
+  <define value="1" name="EXTERNAL" />
+  <define value="2" name="INTERNAL1V1" />
+  <define value="0" name="DEFAULT" />
+  <define value="4" name="EXTERNAL" />
+  <define value="8" name="INTERNAL1V1" />
+  <define value="9" name="INTERNAL2V56" />
+  <define value="13" name="INTERNAL2V56_EXTCAP" />
+  <define value="2" name="INTERNAL1V1" />
+  <define value="3" name="INTERNAL2V56" />
+  <define value="3" name="INTERNAL" />
+  <define value="1" name="DEFAULT" />
+  <define value="0" name="EXTERNAL" />
+  <define value="0" name="NOT_A_PIN" />
+  <define value="0" name="NOT_A_PORT" />
+  <define value="-1" name="NOT_AN_INTERRUPT" />
+  <define value="1" name="PA" />
+  <define value="2" name="PB" />
+  <define value="3" name="PC" />
+  <define value="4" name="PD" />
+  <define value="5" name="PE" />
+  <define value="6" name="PF" />
+  <define value="7" name="PG" />
+  <define value="8" name="PH" />
+  <define value="10" name="PJ" />
+  <define value="11" name="PK" />
+  <define value="12" name="PL" />
+  <define value="0" name="NOT_ON_TIMER" />
+  <define value="1" name="TIMER0A" />
+  <define value="2" name="TIMER0B" />
+  <define value="3" name="TIMER1A" />
+  <define value="4" name="TIMER1B" />
+  <define value="5" name="TIMER1C" />
+  <define value="6" name="TIMER2" />
+  <define value="7" name="TIMER2A" />
+  <define value="8" name="TIMER2B" />
+  <define value="9" name="TIMER3A" />
+  <define value="10" name="TIMER3B" />
+  <define value="11" name="TIMER3C" />
+  <define value="12" name="TIMER4A" />
+  <define value="13" name="TIMER4B" />
+  <define value="14" name="TIMER4C" />
+  <define value="15" name="TIMER4D" />
+  <define value="16" name="TIMER5A" />
+  <define value="17" name="TIMER5B" />
+  <define value="18" name="TIMER5C" />
+</GacHelp>

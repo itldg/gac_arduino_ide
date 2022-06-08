@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GacHelp xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FileName>help\ArduinoSystem\USBDesc.xml</FileName>
+  <define value="7" name="USB_ENDPOINTS" />
+  <define value="5" name="USB_ENDPOINTS" />
+  <define value="20" name="ISERIAL_MAX_LEN" />
+  <define value="2" name="CDC_INTERFACE_COUNT" />
+  <define value="3" name="CDC_ENPOINT_COUNT" />
+  <define value="0" name="CDC_ACM_INTERFACE" />
+  <define value="1" name="CDC_DATA_INTERFACE" />
+  <define value="1" name="CDC_FIRST_ENDPOINT" />
+  <define value="CDC" name="CDC_RX" />
+  <define value="CDC" name="CDC_TX" />
+  <define value="1" name="IMANUFACTURER" />
+  <define value="2" name="IPRODUCT" />
+  <define value="3" name="ISERIAL" />
+</GacHelp>

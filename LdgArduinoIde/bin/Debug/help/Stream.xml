@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GacHelp xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <class name="Stream" summary="Stream是基于字符流和二进制流的基类。">
+    <member name="available" isattr="false">
+      <summary>获取流中可用的字节数。这仅适用于已到达的字节。</summary>
+      <returns datatype="int">可读取的字节数。</returns>
+    </member>
+    <member name="read" isattr="false">
+      <summary>从输入流中读取字符到缓冲区。</summary>
+      <returns datatype="">输入数据的第一个字节可用（如果没有可用数据，则为-1）。</returns>
+    </member>
+    <member name="flush" isattr="false">
+      <summary>发送所有传出字符后，清除缓冲区。</summary>
+      <returns datatype="" />
+    </member>
+    <member name="find" isattr="false">
+      <summary>从流中读取数据，直到找到目标为止。如果找到目标，则该函数返回true；如果超时，则返回false（ 请参见Stream.setTimeout() ）。</summary>
+      <returns datatype="bool">当函数找到了指定字符串信息后将会立即结束函数执行并且返回“真”。否则将会返回“假”。</returns>
+      <param datatype="char" name="target" default="">要搜索的字符串。</param>
+      <param datatype="size_t" name="length" default="null">目标的长度。</param>
+    </member>
+    <member name="findUntil" isattr="false">
+      <summary>findUntil函数可用于从设备接收到的数据中寻找指定字符串信息。当函数找到了指定字符串信息后将会立即结束函数执行并且返回“真”。否则将会返回“假”。该函数在满足以下任一条件后都会停止函数执行
+
+– 读取到指定终止字符串
+– 找到了指定字符串信息
+– 达到设定时间（可使用setTimeout来设置）</summary>
+      <returns datatype="bool">当函数找到了指定字符串信息后将会立即结束函数执行并且返回“真”。否则将会返回“假”。</returns>
+      <param datatype="char" name="target" default="">被查找字符串。允许使用String或char类型。</param>
+      <param datatype="char" name="terminal" default="">终止字符串。用于设置终止函数执行的字符串信息。设备在读取数据时一旦读取到此终止字符串，将会结束函数执行并返回。</param>
+    </member>
+    <member name="peek" isattr="false">
+      <summary>peek函数可用于从设备接收到的数据中读取一个字节的数据。但是与read函数不同的是，使用peek函数读取数据后，被读取的数据不会从数据流中消除。这就导致每一次调用peek函数，只能读取数据流中的第一个字符。然而每一次调用read函数读取数据时，被读取的数据都会从数据流中删除。</summary>
+      <returns datatype="">设备没有接收到数据时，返回值为-1
+设备接收到数据时，返回值为接收到的数据流中的第1个字符。</returns>
+    </member>
+    <member name="readBytes" isattr="false">
+      <summary>readBytes函数可用于从设备接收的数据中读取信息。读取到的数据信息将存放在缓存变量中。该函数在读取到指定字节数的信息或者达到设定时间后都会停止函数执行并返回。该设定时间可使用setTimeout来设置。</summary>
+      <returns datatype="size_t">buffer(缓存变量)中存储的字节数</returns>
+      <param datatype="char" name="buffer" default="">缓存变量/数组。用于存储读取到的信息。允许使用char或者byte类型的变量或数组。</param>
+      <param datatype="int" name="length" default="">取字节数量。readBytes函数在读取到length所指定的字节数量后就会停止运行。</param>
+    </member>
+    <member name="readBytesUntil" isattr="false">
+      <summary>readBytesUntil() 函数可用于从设备接收到数据中读取信息。读取到的数据信息将存放在缓存变量中。该函数在满足以下任一条件后都会停止函数执行并且返回。
+
+– 读取到指定终止字符
+– 读取到指定字节数的信息
+– 达到设定时间（可使用setTimeout来设置）
+
+当函数读取到终止字符后，会立即停止函数执行。此时buffer（缓存变量/数组）中所存储的信息为设备读取到终止字符前的字符内容。</summary>
+      <returns datatype="size_t">buffer(缓存变量)中存储的字节数</returns>
+      <param datatype="char" name="character" default="">终止字符。用于设置终止函数执行的字符信息。设备在读取数据时一旦读取到此终止字符，将会结束函数执行。</param>
+      <param datatype="char" name="buffer" default="">缓存变量/数组。用于存储读取到的信息。允许使用char或者byte类型的变量或数组。</param>
+      <param datatype="int" name="length" default="">读取字节数量。readBytes函数在读取到length所指定的字节数量后就会停止运行。</param>
+    </member>
+    <member name="readString" isattr="false">
+      <summary>readString() 函数可用于从设备接收到数据中读取数据信息。读取到的信息将以字符串格式返回。</summary>
+      <returns datatype="String">接收到的数据</returns>
+    </member>
+    <member name="readStringUntil" isattr="false">
+      <summary>readStringUntil函数可用于从设备接收到的数据中读取信息。读取到的数据信息将以字符串形式返回。该函数在满足以下任一条件后都会停止函数执行并返回。
+
+– 读取到指定终止字符
+– 达到设定时间（可使用setTimeout来设置）
+
+当函数读取到终止字符后，会立即停止函数执行。此时函数所返回的字符串为”终止字符”前的所有字符信息。</summary>
+      <returns datatype="String">接收到的数据</returns>
+
+      <param datatype="char" name="terminator" default="">终止字符。用于设置终止函数执行的字符信息。设备在读取数据时一旦读取到此终止字符，将会结束函数执行。</param>
+    </member>
+    <member name="parseInt" isattr="false">
+      <summary>parseInt() 返回当前位置的第一个有效（长）整数。
+
+特别是：
+
+如果没有读取可配置的超时值的字符，或者读取了非数字，则分析停止。
+
+如果发生超时（请参见Stream.setTimeout（））时未读取有效数字，则返回0；否则返回0。</summary>
+      <returns datatype="long">在输入信息中找到的整数数值。</returns>
+    </member>
+    <member name="parseInt" isattr="false">
+      <summary>parseInt() 返回当前位置的第一个有效（长）整数。
+
+特别是：
+
+如果没有读取可配置的超时值的字符，或者读取了非数字，则分析停止。
+
+如果发生超时（请参见Stream.setTimeout（））时未读取有效数字，则返回0；否则返回0。</summary>
+      <returns datatype="long">在输入信息中找到的整数数值。</returns>
+      
+      <param datatype="LookaheadMode" name="lookahead" default="">用于在流中向前搜索整数的模式。
+      允许lookahead值：
+
+SKIP_ALL：在扫描流中的整数时，将忽略数字或减号以外的所有字符。这是默认模式。
+
+SKIP_NONE：任何内容都不会被跳过，除非第一个等待的字符有效，否则流不会被触摸。
+
+SKIP_WHITESPACE：仅跳过制表符，空格，换行符和回车符。</param>
+      <param datatype="char" name="ignore" default="null">用于跳过搜索中指示的字符。例如，用于跳过数千个分隔符。</param>
+    </member>
+    <member name="parseFloat" isattr="false">
+      <summary>parseFloat()从当前位置返回第一个有效的浮点数。parseFloat()由不是浮点数的第一个字符终止。如果超时，该函数终止（请参见Stream.setTimeout（））。</summary>
+      <returns datatype="float">在输入信息中找到浮点数值。</returns>
+    </member>
+     <member name="parseFloat" isattr="false">
+      <summary>parseFloat()从当前位置返回第一个有效的浮点数。parseFloat()由不是浮点数的第一个字符终止。如果超时，该函数终止（请参见Stream.setTimeout（））。</summary>
+      <returns datatype="float">在输入信息中找到浮点数值。</returns>
+      <param datatype="LookaheadMode" name="lookahead" default="">用于在流中向前搜索整数的模式。
+      允许lookahead值：
+
+SKIP_ALL：在扫描流中的整数时，将忽略数字或减号以外的所有字符。这是默认模式。
+
+SKIP_NONE：任何内容都不会被跳过，除非第一个等待的字符有效，否则流不会被触摸。
+
+SKIP_WHITESPACE：仅跳过制表符，空格，换行符和回车符。</param>
+      <param datatype="char" name="ignore" default="null">用于跳过搜索中指示的字符。例如，用于跳过数千个分隔符。</param>
+    </member>
+    <member name="setTimeout" isattr="false">
+      <summary>setTimeout函数用于设置设备等待数据流的最大时间间隔。
+
+当设备在接收数据时，是以字符作为单位来逐个字符执行接收任务。由于设备无法预判即将接收到的信息包含有多少字符，因此设备会设置一个等待时间。默认情况下，该等待时间是1000毫秒。</summary>
+      <returns datatype="" />
+
+      <param datatype="long" name="time" default="1000">设置最大等待时间。单位：毫秒。</param>
+    </member>
+    <inheritance>Print</inheritance>
+  </class>
+    <member name="Stream" static="false" isattr="false">
+    <summary />
+    <returns datatype="" />
+  </member>
+  <enums name="LookaheadMode" summary="此枚举为parseInt（）、parseFloat（）提供了前瞻选项,在找到第一个有效字符之前，将使用此处列出的规则或者由于缺少输入而发生超时。">
+    <enum name="SKIP_ALL" value="忽略所有无效字符。" />
+    <enum name="SKIP_NONE" value="除非第一个等待字符有效，否则不会跳过任何内容，也不会触摸流。" />
+    <enum name="SKIP_WHITESPACE" value="只跳过制表符、空格、换行符和回车符。" />
+  </enums>
+</GacHelp>

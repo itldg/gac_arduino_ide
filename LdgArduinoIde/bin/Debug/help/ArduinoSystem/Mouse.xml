@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GacHelp xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <class name="Mouse">
+    <member name="begin" isattr="false">
+      <summary />
+      <desc>Begins emulating the mouse connected to a computer. begin() must be called before controlling the computer. To end control, use Mouse.end().</desc>
+      <returns datatype="" />
+    </member>
+    <member name="click" isattr="false">
+      <summary />
+      <desc>Sends a momentary click to the computer at the location of the cursor. This is the same as pressing and immediately releasing the mouse button.
+Mouse.click() defaults to the left mouse button.</desc>
+      <returns datatype="" />
+      <param datatype="" name="button" default=""> which mouse button to press. Allowed data types: char.</param>
+    </member>
+    <member name="end" isattr="false">
+      <summary />
+      <desc>Stops emulating the mouse connected to a computer. To start control, use Mouse.begin().</desc>
+      <returns datatype="" />
+    </member>
+    <member name="move" isattr="false">
+      <summary />
+      <desc>Moves the cursor on a connected computer. The motion onscreen is always relative to the cursor’s current location. Before using Mouse.move() you must call Mouse.begin()</desc>
+      <returns datatype="" />
+      <param datatype="" name="xVal" default=""> amount to move along the x-axis. Allowed data types: signed char.</param>
+      <param datatype="" name="yVal" default=""> amount to move along the y-axis. Allowed data types: signed char.</param>
+      <param datatype="" name="wheel" default=""> amount to move scroll wheel. Allowed data types: signed char.</param>
+    </member>
+    <member name="press" isattr="false">
+      <summary />
+      <desc>Sends a button press to a connected computer. A press is the equivalent of clicking and continuously holding the mouse button. A press is cancelled with Mouse.release().
+Before using Mouse.press(), you need to start communication with Mouse.begin().
+Mouse.press() defaults to a left button press.</desc>
+      <returns datatype="" />
+      <param datatype="" name="button" default=""> which mouse button to press. Allowed data types: char.</param>
+    </member>
+    <member name="release" isattr="false">
+      <summary />
+      <desc>Sends a message that a previously pressed button (invoked through Mouse.press()) is released. Mouse.release() defaults to the left button.</desc>
+      <returns datatype="" />
+      <param datatype="" name="button" default=""> which mouse button to press. Allowed data types: char.</param>
+    </member>
+    <member name="isPressed" isattr="false">
+      <summary />
+      <desc>Checks the current status of all mouse buttons, and reports if any are pressed or not.</desc>
+      <returns datatype="">Reports whether a button is pressed or not. Data type: bool.</returns>
+      <param datatype="" name="button" default=""> which mouse button to check. Allowed data types: char.</param>
+    </member>
+  </class>
+</GacHelp>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GacHelp xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FileName>help\ArduinoSystem\wiring_private.xml</FileName>
+  <inlude>io</inlude>
+  <inlude>interrupt</inlude>
+  <inlude>stdio</inlude>
+  <inlude>stdarg</inlude>
+  <inlude>Arduino</inlude>
+  <define value="0" name="EXTERNAL_INT_0" />
+  <define value="1" name="EXTERNAL_INT_1" />
+  <define value="2" name="EXTERNAL_INT_2" />
+  <define value="3" name="EXTERNAL_INT_3" />
+  <define value="4" name="EXTERNAL_INT_4" />
+  <define value="5" name="EXTERNAL_INT_5" />
+  <define value="6" name="EXTERNAL_INT_6" />
+  <define value="7" name="EXTERNAL_INT_7" />
+  <define value="8" name="EXTERNAL_NUM_INTERRUPTS" />
+  <define value="3" name="EXTERNAL_NUM_INTERRUPTS" />
+  <define value="5" name="EXTERNAL_NUM_INTERRUPTS" />
+  <define value="2" name="EXTERNAL_NUM_INTERRUPTS" />
+</GacHelp>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GacHelp xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FileName>help\ArduinoSystem\IPAddress.xml</FileName>
+  <inlude>stdint</inlude>
+  <inlude>Printable</inlude>
+  <inlude>WString</inlude>
+  <class name="IPAddress" summary="" static="false">
+    <member name="fromString" static="false" isattr="false">
+      <summary />
+      <returns datatype="bool" />
+      <param datatype="const char" name="*address" default="" />
+    </member>
+    <member name="fromString" static="false" isattr="false">
+      <summary />
+      <returns datatype="bool" />
+      <param datatype="const String" name="&amp;address" default="" />
+    </member>
+    <member name="uint32_t" static="false" isattr="false">
+      <summary />
+      <returns datatype="operator" />
+    </member>
+    <member name="operator" static="false" isattr="false">
+      <summary />
+      <returns datatype="bool" />
+      <param datatype="const IPAddress&amp;" name="addr" default="" />
+    </member>
+    <member name="operator" static="false" isattr="false">
+      <summary />
+      <returns datatype="bool" />
+      <param datatype="const uint8_t*" name="addr" default="" />
+    </member>
+    <member name="operator" static="false" isattr="false">
+      <summary />
+      <returns datatype="uint8_t" />
+      <param datatype="int" name="index" default="" />
+    </member>
+    <member name="uint8_t" static="false" isattr="false">
+      <summary />
+      <returns datatype="" />
+      <param datatype="int" name="index" default="" />
+    </member>
+    <member name="EthernetClass" static="false" isattr="false">
+      <summary />
+      <returns datatype="friend class" />
+    </member>
+    <member name="UDP" static="false" isattr="false">
+      <summary />
+      <returns datatype="friend class" />
+    </member>
+    <member name="Client" static="false" isattr="false">
+      <summary />
+      <returns datatype="friend class" />
+    </member>
+    <member name="Server" static="false" isattr="false">
+      <summary />
+      <returns datatype="friend class" />
+    </member>
+    <member name="DhcpClass" static="false" isattr="false">
+      <summary />
+      <returns datatype="friend class" />
+    </member>
+    <member name="DNSClient" static="false" isattr="false">
+      <summary />
+      <returns datatype="friend class" />
+    </member>
+    <member name="EthernetClass" static="false" isattr="true">
+      <summary />
+      <returns datatype="friend class" />
+    </member>
+    <member name="UDP" static="false" isattr="true">
+      <summary />
+      <returns datatype="friend class" />
+    </member>
+    <member name="Client" static="false" isattr="true">
+      <summary />
+      <returns datatype="friend class" />
+    </member>
+    <member name="Server" static="false" isattr="true">
+      <summary />
+      <returns datatype="friend class" />
+    </member>
+    <member name="DhcpClass" static="false" isattr="true">
+      <summary />
+      <returns datatype="friend class" />
+    </member>
+    <member name="DNSClient" static="false" isattr="true">
+      <summary />
+      <returns datatype="friend class" />
+    </member>
+    <inheritance>Printable</inheritance>
+  </class>
+  <member name="IPAddress" static="false" isattr="false">
+    <summary />
+    <returns datatype="" />
+  </member>
+  <member name="IPAddress" static="false" isattr="false">
+    <summary />
+    <returns datatype="" />
+    <param datatype="uint8_t" name="first_octet" default="" />
+    <param datatype="uint8_t" name="second_octet" default="" />
+    <param datatype="uint8_t" name="third_octet" default="" />
+    <param datatype="uint8_t" name="fourth_octet" default="" />
+  </member>
+  <member name="IPAddress" static="false" isattr="false">
+    <summary />
+    <returns datatype="" />
+    <param datatype="uint32_t" name="address" default="" />
+  </member>
+  <member name="IPAddress" static="false" isattr="false">
+    <summary />
+    <returns datatype="" />
+    <param datatype="const uint8_t" name="*address" default="" />
+  </member>
+  <member name="IPAddress" static="false" isattr="false">
+    <summary />
+    <returns datatype="" />
+    <param datatype="const uint8_t" name="*address" default="" />
+  </member>
+  <member name="IPAddress" static="false" isattr="false">
+    <summary />
+    <returns datatype="" />
+    <param datatype="uint32_t" name="address" default="" />
+  </member>
+</GacHelp>

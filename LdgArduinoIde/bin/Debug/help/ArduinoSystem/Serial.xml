@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GacHelp xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <class name="Serial" static="true" summary="串口通讯类">
+    <inheritance>Stream</inheritance>
+	 <member name="availableForWrite" isattr="false">
+      <summary>获取可用于在串行缓冲区中进行写入而不阻止写入操作的字节数（字符）。</summary>
+      <returns datatype="int">可以写入的字节数。</returns>
+    </member>
+    <member name="begin" isattr="false">
+      <summary>设置电脑与Arduino进行串口通讯时的数据传输速率（每秒传输字节数）。
+可使用以下速率：300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600, 115200。
+你也可以根据你所使用的设备而设置其他传输速率。</summary>
+      <returns datatype="" />
+      <param datatype="" name="speed" default=""> 每秒传输字节数 – long（长整型数据）</param>
+    </member>
+    <member name="end" isattr="false">
+      <summary>终止串行通讯，让RX 和 TX引脚用于Arduino的输入（INPUT）或输出(OUTPUT)功能。可调用 Serial.begin()重新打开串行通讯。</summary>
+      <returns datatype="" />
+    </member>
+    <member name="find" isattr="false">
+      <summary>find函数可用于从设备接收到的数据中寻找指定字符串信息。当函数找到了指定字符串信息后将会立即结束函数执行并且返回“真”。否则将会返回“假”。</summary>
+      <returns datatype="bool">当函数找到了指定字符串信息后将会立即结束函数执行并且返回“真”。否则将会返回“假”。</returns>
+      <param datatype="String" name="target" default="">被查找字符串。允许使用String或char类型。</param>
+    </member>
+    <member name="findUntil" isattr="false">
+      <summary >可用于从设备接收到的数据中寻找指定字符串信息。当函数找到了指定字符串信息后将会立即结束函数执行并且返回“真”。否则将会返回“假”。该函数在满足以下任一条件后都会停止函数执行
+– 读取到指定终止字符串
+– 找到了指定字符串信息
+– 达到设定时间（可使用setTimeout来设置）</summary>
+      <returns datatype="bool">当函数找到了指定字符串信息后将会立即结束函数执行并且返回“真”。否则将会返回“假”。</returns>
+      <param datatype="String" name="target" default="">被查找字符串。允许使用String或char类型。</param>
+      <param datatype="String" name="terminator" default="">终止字符串。用于设置终止函数执行的字符串信息。设备在读取数据时一旦读取到此终止字符串，将会结束函数执行并返回。</param>
+    </member>
+    <member name="flush" isattr="false">
+      <summary >flush函数可让开发板在所有待发数据发送完毕前，保持等待状态。</summary>
+      <returns datatype="" />
+    </member>
+    <member name="parseFloat" isattr="false">
+      <summary >用于从设备接收到的数据中寻找浮点数值。</summary>
+      <returns datatype="float">在输入信息中找到浮点数值。</returns>
+    </member>
+    <member name="parseInt" isattr="false">
+      <summary>用于从设备接收到的数据中寻找整数数值。</summary>
+      <returns datatype="long">在输入信息中找到的整数数值。</returns>
+    </member>
+    <member name="peek" isattr="false">
+      <summary>用于从设备接收到的数据中读取一个字节的数据。但是与read函数不同的是，使用peek函数读取数据后，被读取的数据不会从数据流中消除。
+        这就导致每一次调用peek函数，只能读取数据流中的第一个字符。然而每一次调用read函数读取数据时，被读取的数据都会从数据流中删除。</summary>
+      <returns datatype="int">设备没有接收到数据时，返回值为-1
+设备接收到数据时，返回值为接收到的数据流中的第1个字符。</returns>
+      <param datatype="String" name="target" default="">被查找字符串。允许使用String或char类型。</param>
+      <param datatype="String" name="terminator" default="">终止字符串。用于设置终止函数执行的字符串信息。设备在读取数据时一旦读取到此终止字符串，将会结束函数执行并返回。</param>
+    </member>
+    <member name="read" isattr="false">
+      <summary>用于从设备接收到数据中读取一个字节的数据。</summary>
+      <returns datatype="">设备没有接收到数据时，返回值为-1
+设备接收到数据时，返回值为接收到的数据流中的1个字符。</returns>
+    </member>
+    <member name="readBytes" isattr="false">
+      <summary>用于从设备接收的数据中读取信息。读取到的数据信息将存放在缓存变量中。
+        该函数在读取到指定字节数的信息或者达到设定时间后都会停止函数执行并返回。该设定时间可使用setTimeout来设置。</summary>
+      <returns datatype="size_t">buffer(缓存变量)中存储的字节数。</returns>
+      <param datatype="char" name="buffer" default="">缓存变量/数组。用于存储读取到的信息。允许使用char或者byte类型的变量或数组。</param>
+      <param datatype="int" name="length" default="">读取字节数量。readBytes函数在读取到length所指定的字节数量后就会停止运行。</param>
+    </member>
+    <member name="readBytesUntil" isattr="false">
+      <summary>用于从设备接收到数据中读取信息。读取到的数据信息将存放在缓存变量中。该函数在满足以下任一条件后都会停止函数执行并且返回。
+
+– 读取到指定终止字符
+– 读取到指定字节数的信息
+– 达到设定时间（可使用setTimeout来设置）
+
+当函数读取到终止字符后，会立即停止函数执行。此时buffer（缓存变量/数组）中所存储的信息为设备读取到终止字符前的字符内容。</summary>
+      <returns datatype="size_t">buffer(缓存变量)中存储的字节数。</returns>
+      <param datatype="char" name="character" default="">终止字符。用于设置终止函数执行的字符信息。设备在读取数据时一旦读取到此终止字符，将会结束函数执行。允许使用char类型。</param>
+      <param datatype="char" name="buffer" default="">缓存变量/数组。用于存储读取到的信息。允许使用char或者byte类型的变量或数组。</param>
+      <param datatype="int" name="length" default="">读取字节数量。readBytes函数在读取到length所指定的字节数量后就会停止运行。</param>
+    </member>
+    <member name="readString" isattr="false">
+      <summary>用于从设备接收到数据中读取数据信息。读取到的信息将以字符串格式返回。</summary>
+      <returns datatype="String">接收到的数据</returns>
+    </member>
+    <member name="readStringUntil" isattr="false">
+      <summary>readStringUntil函数可用于从设备接收到的数据中读取信息。读取到的数据信息将以字符串形式返回。该函数在满足以下任一条件后都会停止函数执行并返回。
+
+– 读取到指定终止字符
+– 达到设定时间（可使用setTimeout来设置）
+
+当函数读取到终止字符后，会立即停止函数执行。此时函数所返回的字符串为”终止字符”前的所有字符信息。</summary>
+      <returns datatype="String">接收到的数据</returns>
+      <param datatype="char" name="terminator" default="">终止字符。用于设置终止函数执行的字符信息。设备在读取数据时一旦读取到此终止字符，将会结束函数执行。</param>
+    </member>
+    <member name="setTimeout" isattr="false">
+      <summary>用于设置设备等待数据流的最大时间间隔。
+
+当设备在接收数据时，是以字符作为单位来逐个字符执行接收任务。由于设备无法预判即将接收到的信息包含有多少字符，因此设备会设置一个等待时间。默认情况下，该等待时间是1000毫秒。
+
+举例来说，假设我们要向设备发送一个字符串“ok”。那么设备在接收到第一个字符“o”以后，他会等待第二个字符的到达。假如在1000毫秒内，设备接收到第二个字符“k”，那么设备会重置等待时间，也就是再等待1000毫秒，看一看字符“k”后面还有没有字符到达。我们知道我们发给设备的字符串只有两个字符，后面没有更多字符了。但是设备并不知道这一情况。因此设备在接收到“k”以后，会等待1000毫秒。直到1000毫秒等待时间结束都没有再次接到字符。这时，设备才会很肯定地结束这一次接收工作。这里这个等待的1000毫秒时间就是通过setTimeout函数来设置的。</summary>
+      <returns datatype="" />
+      <param datatype="long" name="time" default="">设置最大等待时间。单位：毫秒。</param>
+    </member>
+    <member name="write" isattr="false">
+      <summary>写二进制数据到串口，数据是一个字节一个字节地发送的，若以字符形式发送数字请使用print()代替。</summary>
+      <returns datatype="size_t">write()会返回发送的字节数。</returns>
+      <param datatype="" name="val" default="">作为单个字节发送的数据</param>
+      <param datatype="" name="str" default="">由一系列字节组成的字符串</param>
+      <param datatype="" name="buf" default="">同一系列字节组成的数组</param>
+      <param datatype="" name="len" default="">要发送的数组的长度</param>
+    </member>
+  </class>
+</GacHelp>

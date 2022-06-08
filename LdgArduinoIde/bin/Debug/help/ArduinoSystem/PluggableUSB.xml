@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GacHelp xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FileName>help\ArduinoSystem\PluggableUSB.xml</FileName>
+  <inlude>USBAPI</inlude>
+  <inlude>stdint</inlude>
+  <class name="PluggableUSBModule" summary="" static="false">
+    <member name="numEndpoints" static="false" isattr="false">
+      <summary />
+      <returns datatype="" />
+      <param datatype="" name="numEps" default="" />
+    </member>
+  </class>
+  <class name="PluggableUSB_" summary="" static="false">
+    <member name="plug" static="false" isattr="false">
+      <summary />
+      <returns datatype="bool" />
+      <param datatype="PluggableUSBModule" name="*node" default="" />
+    </member>
+    <member name="getInterface" static="false" isattr="false">
+      <summary />
+      <returns datatype="int" />
+      <param datatype="uint8_t*" name="interfaceCount" default="" />
+    </member>
+    <member name="getDescriptor" static="false" isattr="false">
+      <summary />
+      <returns datatype="int" />
+      <param datatype="USBSetup&amp;" name="setup" default="" />
+    </member>
+    <member name="setup" static="false" isattr="false">
+      <summary />
+      <returns datatype="bool" />
+      <param datatype="USBSetup&amp;" name="setup" default="" />
+    </member>
+    <member name="getShortName" static="false" isattr="false">
+      <summary />
+      <returns datatype="void" />
+      <param datatype="char" name="*iSerialNum" default="" />
+    </member>
+  </class>
+  <member name="PluggableUSBModule" static="false" isattr="false">
+    <summary />
+    <returns datatype="" />
+    <param datatype="uint8_t" name="numEps" default="" />
+    <param datatype="uint8_t" name="numIfs" default="" />
+    <param datatype="uint8_t" name="*epType" default="" />
+  </member>
+  <member name="PluggableUSB_" static="false" isattr="false">
+    <summary />
+    <returns datatype="" />
+  </member>
+</GacHelp>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GacHelp xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FileName>help\ArduinoSystem\Print.xml</FileName>
+  <inlude>inttypes</inlude>
+  <inlude>stdio</inlude>
+  <inlude>WString</inlude>
+  <inlude>Printable</inlude>
+  <class name="Print" summary="" static="false">
+    <member name="getWriteError" static="false" isattr="false">
+      <summary />
+      <returns datatype="int" />
+    </member>
+    <member name="clearWriteError" static="false" isattr="false">
+      <summary />
+      <returns datatype="void" />
+    </member>
+    <member name="write" static="false" isattr="false">
+      <summary />
+      <returns datatype="size_t" />
+      <param datatype="const char" name="*str" default="" />
+    </member>
+    <member name="write" static="false" isattr="false">
+      <summary />
+      <returns datatype="size_t" />
+      <param datatype="const char" name="*buffer" default="" />
+      <param datatype="size_t" name="size" default="" />
+    </member>
+    <member name="print" static="false" isattr="false">
+      <summary>打印数据</summary>
+      <returns datatype="size_t" />
+      <param datatype="String" name="chars" default="">可以用int,unsigned char,char,String,double等类型</param>
+      <param datatype="int" name="int" default="DEC 或 2">可选参数 进制,小数位数</param>
+    </member>
+    <member name="println" static="false" isattr="false">
+      <summary>打印数据,并在后面追加换行</summary>
+      <returns datatype="size_t" />
+      <param datatype="String" name="chars" default="">可以用int,unsigned char,char,String,double等类型</param>
+      <param datatype="int" name="int" default="DEC 或 2">可选参数 进制,小数位数</param>
+    </member>
+  </class>
+  <member name="Print" static="false" isattr="false">
+    <summary />
+    <returns datatype="" />
+  </member>
+  <define value="10" name="DEC" />
+  <define value="16" name="HEX" />
+  <define value="8" name="OCT" />
+  <define value="2" name="BIN" />
+</GacHelp>

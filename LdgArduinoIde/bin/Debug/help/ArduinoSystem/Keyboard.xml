@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GacHelp xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <class name="Keyboard">
+    <member name="begin" isattr="false">
+      <summary />
+      <desc>When used with a Leonardo or Due board, Keyboard.begin() starts emulating a keyboard connected to a computer. To end control, use Keyboard.end().</desc>
+      <returns datatype="" />
+    </member>
+    <member name="end" isattr="false">
+      <summary />
+      <desc>Stops the keyboard emulation to a connected computer. To start keyboard emulation, use Keyboard.begin().</desc>
+      <returns datatype="" />
+    </member>
+    <member name="press" isattr="false">
+      <summary />
+      <desc>When called, Keyboard.press() functions as if a key were pressed and held on your keyboard. Useful when using modifier keys. To end the key press, use Keyboard.release() or Keyboard.releaseAll().
+It is necessary to call Keyboard.begin() before using press().</desc>
+      <returns datatype="">Number of key presses sent. Data type: size_t.</returns>
+      <param datatype="" name="key" default=""> the key to press. Allowed data types: char.</param>
+    </member>
+    <member name="print" isattr="false">
+      <summary />
+      <desc>Sends a keystroke to a connected computer.
+Keyboard.print() must be called after initiating Keyboard.begin().</desc>
+      <returns datatype="">Number of bytes sent. Data type: size_t.</returns>
+      <param datatype="" name="character" default=""> a char or int to be sent to the computer as a keystroke.</param>
+      <param datatype="" name="characters" default=""> a string to be sent to the computer as a keystroke.</param>
+    </member>
+    <member name="println" isattr="false">
+      <summary />
+      <desc>Sends a keystroke to a connected computer, followed by a newline and carriage return.
+Keyboard.println() must be called after initiating Keyboard.begin().</desc>
+      <returns datatype="">Number of bytes sent. Data type: size_t.</returns>
+      <param datatype="" name="character" default=""> a char or int to be sent to the computer as a keystroke, followed by newline and carriage return.</param>
+      <param datatype="" name="characters" default=""> a string to be sent to the computer as a keystroke, followed by a newline and carriage return.</param>
+    </member>
+    <member name="release" isattr="false">
+      <summary />
+      <desc>Lets go of the specified key. See Keyboard.press() for more information.</desc>
+      <returns datatype="">The number of keys released. Data type: size_t.</returns>
+      <param datatype="" name="key" default=""> the key to release. Allowed data types: char.</param>
+    </member>
+    <member name="releaseAll" isattr="false">
+      <summary />
+      <desc>Lets go of all keys currently pressed. See Keyboard.press() for additional information.</desc>
+      <returns datatype="" />
+    </member>
+    <member name="write" isattr="false">
+      <summary />
+      <desc>Sends a keystroke to a connected computer. This is similar to pressing and releasing a key on your keyboard. You can send some ASCII characters or the additional keyboard modifiers and special keys.
+Only ASCII characters that are on the keyboard are supported. For example, ASCII 8 (backspace) would work, but ASCII 25 (Substitution) would not. When sending capital letters, Keyboard.write() sends a shift command plus the desired character, just as if typing on a keyboard. If sending a numeric type, it sends it as an ASCII character (ex. Keyboard.write(97) will send 'a').
+For a complete list of ASCII characters, see ASCIITable.com.</desc>
+      <returns datatype="">Number of bytes sent. Data type: size_t.</returns>
+      <param datatype="" name="character" default=""> a char or int to be sent to the computer. Can be sent in any notation that’s acceptable for a char. For example, all of the below are acceptable and send the same value, 65 or ASCII A:</param>
+    </member>
+  </class>
+</GacHelp>

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GacHelp xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <member name="digitalRead" isattr="false">
+    <summary>从指定的数字引脚HIGH或读取值LOW。</summary>
+    <returns datatype="int">HIGH or LOW</returns>
+    <param datatype="int" name="pin" default="">您要读取的Arduino引脚号</param>
+  </member>
+  <member name="digitalWrite" isattr="false">
+    <summary>将HIGH或LOW值写入数字引脚。
+
+如果将引脚配置为OUTPUTwith pinMode()，则其电压将设置为相应的值：5V（在3.3V板上为3.3V）HIGH，0V（接地）LOW。
+
+如果该引脚配置为INPUT，digitalWrite()将启用（HIGH）或禁用（LOW）输入引脚上的内部上拉电阻。建议将设置为pinMode()，INPUT_PULLUP以启用内部上拉电阻。有关更多信息，请参见“数字引脚”教程。
+
+如果您未将设置pinMode()为OUTPUT，而是将LED连接到引脚，则在调用时digitalWrite(HIGH)，LED可能会变暗。如果未明确设置pinMode()，digitalWrite()将启用内部上拉电阻，其作用类似于大限流电阻。</summary>
+    <returns datatype="" />
+    <param datatype="int" name="pin" default="">Arduino引脚号。</param>
+    <param datatype="int" name="value" default=""> HIGH or LOW.</param>
+  </member>
+  <member name="pinMode" isattr="false">
+    <summary>将指定的引脚配置为充当输入或输出。有关引脚功能的详细信息，请参见“数字引脚”页面。
+从Arduino 1.0.1开始，可以使用模式启用内部上拉电阻INPUT_PULLUP。此外，该INPUT模式显式禁用内部上拉电阻。</summary>
+    <returns datatype="" />
+    <param datatype="" name="pin" default="">用于设置模式的Arduino引脚号。</param>
+    <param datatype="" name="mode" default="">INPUT，OUTPUT，或INPUT_PULLUP。</param>
+  </member>
+  <member name="analogRead" isattr="false">
+    <summary>从指定的模拟引脚读取值。Arduino开发板包含一个多通道10位模数转换器。这意味着它将映射介于0和工作电压（5V或3.3V）之间的输入电压为介于0和1023之间的整数值。例如，在Arduino UNO上，其读数之间的分辨率为：5伏/ 1024单位或，每单位0.0049伏（4.9 mV）。有关某些Arduino板的可用引脚，工作电压和最大分辨率，请参见下表。
+
+可以使用analogReference（）来更改输入范围，而可以使用analogReadResolution（）来更改分辨率（仅适用于零，到期和MKR板）。
+
+在基于ATmega的板上（UNO，Nano，Mini，Mega），读取模拟输入大约需要100微秒（0.0001 s），因此最大读取速率约为每秒10,000次。</summary>
+    <returns datatype="int">0到1023之间的值</returns>
+    <param datatype="int" name="pin" default="">要从中读取的模拟输入引脚的名称（大多数板上的A0至A5，MKR板上的A0至A6，Mini和Nano上的A0至A7，Mega上的A0至A15）。</param>
+  </member>
+  <member name="analogReference" isattr="false">
+    <summary>配置用于模拟输入的参考电压（即，用作输入范围顶部的值）</summary>
+    <returns datatype="" />
+    <param datatype="" name="type" default="">要使用的参考类型（请参阅说明中的选项列表）。</param>
+  </member>
+  <member name="analogWrite" isattr="false">
+    <summary>将一个模拟数值写进Arduino引脚。这个操作可以用来控制LED的亮度, 或者控制电机的转速. Arduino每一次对引脚执行analogWrite()指令，都会给该引脚一个固定频率的PWM信号。PWM信号的频率大约为490Hz.
+
+在Arduino UNO控制器中，5号引脚和6号引脚的PWM频率为980Hz。在一些基于ATmega168和ATmega328的Arduino控制器中，analogWrite()函数支持以下引脚: 3, 5, 6, 9, 10, 11。
+
+在Arduino Mega控制其中,该函数支持引脚 2 – 13 和 44 – 46。使用ATmega8的Arduino控制器中，该函数只支持引脚 9, 10, 11.
+
+在调用analogWrite()函数前，您无需使用pinMode()函数来设置该引脚。</summary>
+    <returns datatype="" />
+    <param datatype="int" name="pin" default="">被读取的模拟引脚号码</param>
+    <param datatype="int" name="value" default="">0到255之间的PWM频率值, 0对应off, 255对应on</param>
+  </member>
+  <member name="analogReadResolution" isattr="false">
+    <summary>AnalogReadResolution（）是Arduino Due，Zero和MKR系列的Analog API的扩展。
+
+设置返回的值的大小（以位为单位）analogRead()。它默认为10位（返回值介于0-1023之间），以便与基于AVR的板向后兼容。
+
+在由于，零和MKR家庭板具有可以通过改变分辨率至12这将从返回值被访问的12位ADC的能力analogRead()4095之间0和。</summary>
+    <returns datatype="" />
+    <param datatype="int" name="bits" default="">确定analogRead()函数返回值的分辨率（以位为单位）。您可以在1到32之间设置。您可以将分辨率设置为高于12，但是返回的值analogRead()将接近。</param>
+  </member>
+  <member name="analogWriteResolution" isattr="false">
+    <summary>analogWriteResolution() 是Arduino Due的Analog API的扩展。
+analogWriteResolution()设置analogWrite()功能的分辨率。它默认为8位（0-255之间的值），以便与基于AVR的板向后兼容。</summary>
+    <returns datatype="" />
+    <param datatype="int" name="bits" default="">确定analogWrite()功能中使用的值的分辨率（以位为单位）。该值的范围为1到32。如果选择的分辨率高于或低于板卡的硬件功能，则所用的值analogWrite()如果太高将被截断，或者如果太低则被零填充。</param>
+  </member>
+  <member name="noTone" isattr="false">
+    <summary>noTone()函数用来停止tone()函数发声。
+注：如您需要使用多个Arduino引脚发声，要在每个引脚输出声音信号前调用noTone()函数来停止当前的声音信号。</summary>
+    <returns datatype="" />
+    <param datatype="int" name="pin" default="">停止发声引脚</param>
+  </member>
+  <member name="pulseIn" isattr="false">
+    <summary>读取引脚上的脉冲（HIGH或LOW）。例如，如果value为HIGH，则pulseIn()等待引脚从LOW移至HIGH，开始计时，然后等待引脚移至LOW并停止计时。返回脉冲的长度（以微秒为单位）或放弃，如果在超时时间内未收到完整的脉冲，则返回0。
+
+该功能的时序已根据经验确定，可能会在较长的脉冲中显示出误差。可处理10毫秒至3分钟长度的脉冲。</summary>
+    <returns datatype="unsigned long">脉冲持续时长。
+如果在超时时间内没有读到脉冲信号, 将返回0.</returns>
+    <param datatype="int" name="pin" default="">要在其上读取脉冲的Arduino引脚的编号。</param>
+    <param datatype="int" name="value" default="">要读取的脉冲类型：HIGH或LOW。</param>
+    <param datatype="unsigned long" name="timeout" default="1000000">等待脉冲开始的微秒数；默认值为一秒钟。</param>
+  </member>
+  <member name="pulseInLong" isattr="false">
+    <summary>pulseInLong()是pulseIn()的替代方法，它更适合处理长脉冲和受中断影响的情况。
+
+读取引脚上的脉冲（HIGH或LOW）。例如，如果value为HIGH，则pulseInLong()等待引脚从LOW移至HIGH，开始计时，然后等待引脚移至LOW并停止计时。返回脉冲的长度（以微秒为单位）或放弃，如果在超时时间内未收到完整的脉冲，则返回0。
+
+此功能的时序已根据经验确定，可能会在较短的脉冲中显示出误差。可处理10毫秒至3分钟长度的脉冲。仅当中断被激活时，才能使用该例程。此外，以较大的间隔可以获得最高分辨率。</summary>
+    <returns datatype="unsigned long">脉冲的长度（以微秒为单位）；如果超时之前没有脉冲开始，则为0</returns>
+    <param datatype="int" name="pin" default="">要在其上读取脉冲的Arduino引脚的编号。</param>
+    <param datatype="int" name="value" default="">要读取的脉冲类型：HIGH或LOW。</param>
+    <param datatype="unsigned long" name="timeout" default="1000000">等待脉冲开始的微秒数；默认值为一秒钟。</param>
+  </member>
+  <member name="shiftIn" isattr="false">
+    <summary>一次将一个字节的数据移入一位。从最高（即最左边）或最低（最右边）有效位开始。对于每一位，时钟引脚被拉高，从数据线读取下一位，然后时钟引脚被拉低。
+
+如果您要连接由上升沿计时的设备，则需要确保在首次调用之前shiftIn()（例如通过调用），时钟引脚为低电平digitalWrite(clockPin, LOW)。
+
+注意：这是软件实现；Arduino还提供了一个使用硬件实现的SPI库，速度更快，但仅适用于特定的引脚。</summary>
+    <returns datatype="byte">读取到的数据</returns>
+    <param datatype="int" name="dataPin" default="">输入每个位的引脚。</param>
+    <param datatype="" name="clockPin" default="">用于切换以指示从dataPin读取的引脚。</param>
+    <param datatype="" name="bitOrder" default="">按什么顺序移入位；要么MSBFIRST或LSBFIRST。（最高有效位在先，或最低有效位在前）。</param>
+  </member>
+  <member name="shiftOut" isattr="false">
+    <summary>一次将数据字节移出一位。从最高（即最左边）或最低（最右边）有效位开始。每个位依次写入数据引脚，然后向时钟引脚脉冲（先变高，然后变低），以指示该位可用。
+
+注意-如果您要连接的设备是由上升沿时钟驱动的，则需要在调用之前确保时钟引脚为低电平shiftOut()，例如，通过调用digitalWrite(clockPin, LOW)。
+
+这是一个软件实现；另请参见SPI库，该库提供了更快的硬件实现，但仅适用于特定的引脚。</summary>
+    <returns datatype="" />
+    <param datatype="int" name="dataPin" default="">输出每个位的引脚。</param>
+    <param datatype="int" name="clockPin" default="">一旦将dataPin设置为正确的值，即可切换的引脚。</param>
+    <param datatype="" name="bitOrder" default="">移出位的顺序；MSBFIRST或LSBFIRST。（最高有效位在先，或最低有效位在前）。</param>
+    <param datatype="byte" name="value" default="">要移出的数据。</param>
+  </member>
+  <member name="tone" isattr="false">
+    <summary>在引脚上生成指定频率（和50％占空比）的方波。可以指定一个持续时间，否则wave将继续直到调用noTone（）为止。该引脚可以连接到压电蜂鸣器或其他扬声器以播放音调。
+
+一次只能产生一种音调。如果已经在其他引脚上播放了声音，则对的调用tone()将无效。如果该音调在同一引脚上播放，则通话将设置其频率。
+
+使用该tone()功能会干扰引脚3和11（Mega以外的板上）的PWM输出。
+
+不可能产生低于31Hz的音调。有关技术细节，请参阅Brett Hagman的说明。</summary>
+    <returns datatype="" />
+    <param datatype="int" name="pin" default="">在其上生成音调的Arduino引脚。</param>
+    <param datatype="int" name="frequency" default="">音调的频率，以赫兹为单位。</param>
+    <param datatype="unsigned long" name="duration" default="">提示音的持续时间（以毫秒为单位）（可选）</param>
+  </member>
+  <member name="delay" isattr="false">
+    <summary>暂停程序一段指定为参数的时间（以毫秒为单位）。（每秒有1000毫秒。）</summary>
+    <returns datatype="" />
+    <param datatype="unsigned long" name="timeout" default="">要暂停的毫秒数。</param>
+  </member>
+  <member name="delayMicroseconds" isattr="false">
+    <summary>暂停程序一段由参数指定的时间（以微秒为单位）。一毫秒有一千微秒，一秒有一百万微秒。
+当前，将产生准确延迟的最大值是16383。这可能会在将来的Arduino版本中改变。对于超过几千微秒的延迟，应该使用delay()。</summary>
+    <returns datatype="" />
+    <param datatype="unsigned int" name="us" default="">要暂停的微秒数。</param>
+  </member>
+  <member name="micros" isattr="false">
+    <summary>返回自Arduino开发板开始运行当前程序以来的微秒数。大约70分钟后，该数字将溢出（返回零）。在16 MHz的Arduino板上（例如Duemilanove和Nano），此函数的分辨率为4微秒（即返回的值始终是4的倍数）。在8 MHz的Arduino板上（例如LilyPad），此功能的分辨率为8微秒。</summary>
+    <returns datatype="unsigned long">返回自Arduino开发板开始运行当前程序以来的微秒数。</returns>
+  </member>
+  <member name="millis" isattr="false">
+    <summary>返回自Arduino开发板开始运行当前程序以来经过的毫秒数。大约50天后，该数字将溢出（返回零）。</summary>
+    <returns datatype="unsigned long">自程序启动以来经过的毫秒数。</returns>
+  </member>
+  <member name="abs" isattr="false">
+    <summary>计算数字的绝对值。</summary>
+    <returns datatype="">数字的绝对值</returns>
+    <param datatype="" name="x" default="">计算绝对值的数字</param>
+  </member>
+  <member name="constrain" isattr="false">
+    <summary>将数字限制在一个范围内。</summary>
+    <returns datatype="">x: 如果x介于a与b之间，则返回x
+
+a: 如果x小于限制区间下限a，则返回a
+
+b: 如果x大于限制区间上限b，则返回b</returns>
+    <param datatype="" name="x" default="">被限制到某一区间的数值（可以是任何数据类型）</param>
+    <param datatype="" name="a" default="">限制区间下限（可以是任何数据类型）</param>
+    <param datatype="" name="b" default="">限制区间上限（可以是任何数据类型）</param>
+  </member>
+  <member name="map" isattr="false">
+    <summary>将某一数值从一个区间等比映射到一个新的区间。</summary>
+    <returns datatype="">映射值</returns>
+    <param datatype="" name="value" default="">要映射的值</param>
+    <param datatype="" name="fromLow" default="">映射前区间最小值</param>
+    <param datatype="" name="fromHigh" default="">映射前区间最大值</param>
+    <param datatype="" name="toLow" default="">映射后区间最小值</param>
+    <param datatype="" name="toHigh" default="">映射后区间最大值</param>
+  </member>
+  <member name="max" isattr="false">
+    <summary>取两者之间最大值</summary>
+    <returns datatype="">两个数字中较大的数值。</returns>
+    <param datatype="" name="x" default="">第一个数字（可以是任何数据类型）</param>
+    <param datatype="" name="y" default="">第二个数字（可以是任何数据类型）</param>
+  </member>
+  <member name="min" isattr="false">
+    <summary>取两者之间最小值</summary>
+    <returns datatype="">两个数字中较小的数值。</returns>
+    <param datatype="" name="x" default="">第一个数字（可以是任何数据类型）</param>
+    <param datatype="" name="y" default="">第二个数字（可以是任何数据类型）</param>
+  </member>
+  <member name="pow" isattr="false">
+    <summary>指数运算</summary>
+    <returns datatype="double">指数运算结果</returns>
+    <param datatype="float" name="base" default="">底数</param>
+    <param datatype="float" name="exponent" default="">指数</param>
+  </member>
+  <member name="sq" isattr="false">
+    <summary>计算数字的平方：数字乘以自身。</summary>
+    <returns datatype="double">数字的平方</returns>
+    <param datatype="" name="x" default="">求平方的数字（可以是任何数据类型）</param>
+  </member>
+  <member name="sqrt" isattr="false">
+    <summary>开方运算</summary>
+    <returns datatype="double">平方根</returns>
+    <param datatype="" name="x" default="">被开方数（可以是任何数据类型）</param>
+  </member>
+  <member name="cos" isattr="false">
+    <summary>计算角度的余弦（以弧度为单位）。结果将在-1和1之间。</summary>
+    <returns datatype="double">角度的余弦值</returns>
+    <param datatype="float" name="rad" default="">角度</param>
+  </member>
+  <member name="sin" isattr="false">
+    <summary >计算一个角度的正弦（以弧度为单位）。结果将在-1和1之间。</summary>
+    <returns datatype="double">角度的正弦。</returns>
+    <param datatype="float" name="rad" default="">以弧度为单位的角度。</param>
+  </member>
+  <member name="tan" isattr="false">
+    <summary>计算角度的切线（以弧度为单位）。结果将在负无穷大和无穷大之间。</summary>
+    <returns datatype="double">角度的正切值</returns>
+    <param datatype="float" name="rad" default="">以弧度为单位的角度。</param>
+  </member>
+  <member name="isAlpha" isattr="false">
+    <summary>分析一个字符是否为字母（即字母）。</summary>
+    <returns datatype="bool">如果thisChar包含字母，则返回true。</returns>
+    <param datatype="char" name="thisChar" default="">要分析的字符</param>
+  </member>
+  <member name="isAlphaNumeric" isattr="false">
+    <summary>分析一个字符是否为字母数字（即字母或数字）。</summary>
+    <returns datatype="bool">如果thisChar包含数字或字母，则返回true。</returns>
+    <param datatype="char" name="thisChar" default="">要分析的字符</param>
+  </member>
+  <member name="isAscii" isattr="false">
+    <summary>分析一个字符是否为Ascii。</summary>
+    <returns datatype="bool">如果thisChar包含一个Ascii字符，则返回true。</returns>
+    <param datatype="char" name="thisChar" default="">要分析的字符</param>
+  </member>
+  <member name="isControl" isattr="false">
+    <summary>分析字符是否为控制字符。</summary>
+    <returns datatype="bool">如果thisChar是控制字符，则返回true。</returns>
+    <param datatype="char" name="thisChar" default="">要分析的字符</param>
+  </member>
+  <member name="isDigit" isattr="false">
+    <summary>分析字符是否为数字。</summary>
+    <returns datatype="bool">如果thisChar是数字，则返回true。</returns>
+    <param datatype="char" name="thisChar" default="">要分析的字符</param>
+  </member>
+  <member name="isGraph" isattr="false">
+    <summary>分析char是否可以打印某些内容（空格是可打印的但没有内容）。</summary>
+    <returns datatype="bool">如果thisChar可打印，则返回true。</returns>
+    <param datatype="char" name="thisChar" default="">要分析的字符</param>
+  </member>
+  <member name="isHexadecimalDigit" isattr="false">
+    <summary>分析字符是否为十六进制数字（A-F，0-9）。</summary>
+    <returns datatype="bool">如果thisChar包含一个十六进制数字，则返回true。</returns>
+    <param datatype="char" name="thisChar" default="">要分析的字符</param>
+  </member>
+  <member name="isLowerCase" isattr="false">
+    <summary>分析字符是否为小写（即小写字母）。</summary>
+    <returns datatype="bool">如果thisChar包含小写字母，则返回true。</returns>
+    <param datatype="char" name="thisChar" default="">要分析的字符</param>
+  </member>
+  <member name="isPrintable" isattr="false">
+    <summary>分析一个char是否可打印（即产生输出的任何字符，甚至是空格）。</summary>
+    <returns datatype="bool">如果thisChar可打印，则返回true。</returns>
+    <param datatype="char" name="thisChar" default="">要分析的字符</param>
+  </member>
+  <member name="isPunct" isattr="false">
+    <summary>分析字符是否为标点符号（即逗号，分号，感叹号等）。</summary>
+    <returns datatype="bool">如果thisChar是标点符号，则返回true。</returns>
+    <param datatype="char" name="thisChar" default="">要分析的字符</param>
+  </member>
+  <member name="isSpace" isattr="false">
+    <summary>分析字符是否为空格字符。</summary>
+    <returns datatype="bool">如果参数为空格，换页（'\f'），换行（'\n'），回车（'\r'），水平制表符（'\t'）或垂直制表符（'\v'），则返回true 。</returns>
+    <param datatype="char" name="thisChar" default="">要分析的字符</param>
+  </member>
+  <member name="isUpperCase" isattr="false">
+    <summary>分析字符是否为大写（即大写字母）。</summary>
+    <returns datatype="bool">如果thisChar为大写，则返回true。</returns>
+    <param datatype="char" name="thisChar" default="">要分析的字符</param>
+  </member>
+  <member name="isWhitespace" isattr="false">
+    <summary>分析字符是否为空格字符。</summary>
+    <returns datatype="bool">如果参数是空格或水平制表符（'\t'），则返回true 。</returns>
+    <param datatype="char" name="thisChar" default="">要分析的字符</param>
+  </member>
+  <member name="random" isattr="false">
+    <summary >随机函数生成伪随机数。</summary>
+    <returns datatype="long">max-1的随机数。</returns>
+    <param datatype="" name="max" default="">随机值的上限，不包括在内。</param>
+  </member>
+   <member name="random" isattr="false">
+    <summary >随机函数生成伪随机数。</summary>
+    <returns datatype="long">min和max-1之间的随机数。</returns>
+    <param datatype="" name="min" default="">随机值的下限（含）</param>
+    <param datatype="" name="max" default="">随机值的上限，不包括在内。</param>
+  </member>
+  <member name="randomSeed" isattr="false">
+    <summary>randomSeed()初始化伪随机数生成器，使其开始于其随机序列中的任意点。这个序列虽然很长而且是随机的，但始终是相同的。
+如果重要的是要使生成的值序列random()不同，则在后续执行草图时，请使用randomSeed（）使用相当随机的输入（例如analogRead()在未连接的引脚上）初始化随机数生成器。
+相反，偶尔使用精确重复的伪随机序列会很有用。这可以通过randomSeed()在启动随机序列之前使用固定号码进行调用来实现。</summary>
+    <returns datatype="" />
+    <param datatype="unsigned long" name="seed" default="">数字，用于初始化伪随机序列。</param>
+  </member>
+  <member name="bit" isattr="false">
+    <summary>计算指定位的值（位0为1，位1为2，位2为4，依此类推）。</summary>
+    <returns datatype="">该位的值。</returns>
+    <param datatype="" name="n" default="">要计算其值的位</param>
+  </member>
+  <member name="bitClear" isattr="false">
+    <summary>清除（将0写入）一个数字变量。</summary>
+    <returns datatype="">n清除位置位后的数字变量值。</returns>
+    <param datatype="" name="x" default="">要清除其位的数字变量。</param>
+    <param datatype="" name="n" default="">被清空为0的位置（右起第一位为0位，第二位为1，以此类推。）</param>
+  </member>
+  <member name="bitRead" isattr="false">
+    <summary>从数值中读取bit(位)</summary>
+    <returns datatype="">该位的值（0或1）。</returns>
+    <param datatype="" name="x" default="">被读取位的数值</param>
+    <param datatype="" name="n" default="">被读取的位置（右起第一位为0位，第二位为1，以此类推。）</param>
+  </member>
+  <member name="bitSet" isattr="false">
+    <summary>将数值的某一位设置为1</summary>
+    <returns datatype="" />
+    <param datatype="" name="x" default="">被操作的数字变量</param>
+    <param datatype="" name="n" default="">被设置为1的位置（右起第一位为0位，第二位为1，以此类推。）</param>
+  </member>
+  <member name="bitWrite" isattr="false">
+    <summary>向数值中写入bit(位)</summary>
+    <returns datatype="" />
+    <param datatype="" name="x" default="">被写入位的数值</param>
+    <param datatype="" name="n" default="">被写入的位置（右起第一位为0位，第二位为1，以此类推。）</param>
+    <param datatype="" name="b" default="">所写入的位信息 (0 或 1)</param>
+  </member>
+  <member name="highByte" isattr="false">
+    <summary>对变量取高字节。如果该变量有两个以上的字节，则取第二低字节。</summary>
+    <returns datatype="byte"></returns>
+    <param datatype="" name="x" default="">被取高字节的变量（可以是任何变量类型）</param>
+  </member>
+  <member name="lowByte" isattr="false">
+    <summary>对变量取低字节</summary>
+    <returns datatype="byte"></returns>
+    <param datatype="" name="x" default="">被取低字节的变量（可以是任何变量类型）</param>
+  </member>
+    <member name="attachInterrupt" isattr="false">
+    <summary>attachInterrupt()函数是用于为Arduino开发板设置和执行ISR（中断服务程序）用的
+ISR（中断服务程序）顾名思义就是中断Arduino当前正在处理的事情而优先去执行中断服务程序。当中断服务程序完成以后，再回来继续执行刚才执行的事情。中断服务程序对监测Arduino输入有很大的用处。</summary>
+    <returns datatype="" />
+    <param datatype="int" name="interrupt" default="">中断号。</param>
+    <param datatype="" name="ISR" default="">中断服务程序名</param>
+    <param datatype="" name="mode" default="">中断模式(mode) 
+      有以下几种形式：
+LOW： 当引脚为低电平时触发中断服务程序
+CHANGE： 当引脚电平发生变化时触发中断服务程序
+RISING： 当引脚电平由低电平变为高电平时触发中断服务程序
+FALLING： 当引脚电平由高电平变为低电平时触发中断服务程序</param>
+  </member>
+  <member name="attachInterrupt" isattr="false">
+    <summary>attachInterrupt()函数是用于为Arduino开发板设置和执行ISR（中断服务程序）用的
+ISR（中断服务程序）顾名思义就是中断Arduino当前正在处理的事情而优先去执行中断服务程序。当中断服务程序完成以后，再回来继续执行刚才执行的事情。中断服务程序对监测Arduino输入有很大的用处。</summary>
+    <returns datatype="" />
+    <param datatype="" name="pin" default="">中断引脚号</param>
+    <param datatype="" name="ISR" default="">中断服务程序名</param>
+    <param datatype="" name="mode" default="">中断模式(mode) 
+      有以下几种形式：
+LOW： 当引脚为低电平时触发中断服务程序
+CHANGE： 当引脚电平发生变化时触发中断服务程序
+RISING： 当引脚电平由低电平变为高电平时触发中断服务程序
+FALLING： 当引脚电平由高电平变为低电平时触发中断服务程序</param>
+  </member>
+  <member name="detachInterrupt" isattr="false">
+    <summary>取消中断。
+      推荐使用detachInterrupt(digitalPinToInterrupt(pin))</summary>
+    <returns datatype="" />
+    <param datatype="" name="interrupt" default="">要禁用的中断号</param>
+  </member>
+    <member name="detachInterrupt" isattr="false">
+    <summary>取消中断。
+      推荐使用detachInterrupt(digitalPinToInterrupt(pin))</summary>
+    <returns datatype="" />
+    <param datatype="" name="pin" default="">要禁用的中断的Arduino引脚号</param>
+  </member>
+  <member name="interrupts" isattr="false">
+    <summary>重新启用中断（在被noInterrupts（）禁用之后。中断允许某些重要任务在后台发生并默认启用。当禁用中断时，某些功能将不起作用，并且传入通信可能会被忽略。可能会稍微破坏代码的时序，但是对于特别关键的代码部分可能会被禁用。</summary>
+    <returns datatype="" />
+  </member>
+  <member name="noInterrupts" isattr="false">
+    <summary>禁用中断（您可以使用来重新启用它们interrupts()）。中断允许某些重要任务在后台发生，并且默认情况下启用。禁用中断时，某些功能将不起作用，并且传入的通信可能会被忽略。但是，中断可能会稍微破坏代码的时序，并且可能会在代码的特别关键的部分将其禁用。</summary>
+    <returns datatype="" />
+  </member>
+  <member name="sizeof" isattr="false">
+    <summary>sizeof操作符返回一个变量的字节数，或者返回数组占用的字节数。</summary>
+    <returns datatype="size_t">变量中的字节数或数组中占用的字节数</returns>
+    <param datatype="float" name="variable" default="">任何变量类型或数组（如int，float，byte）</param>
+  </member>
+  <member name="loop" isattr="false">
+    <summary>在setup()函数对程序完成了初始化后，loop()函数将会运行。loop函数是一个循环体，在Arduino启动后，loop()函数中的程序将会不断运行。
+通过loop()函数你可以利用你的程序来控制Arduino，并使Arduino根据你的程序进行相应的反应。</summary>
+    <returns datatype="" />
+  </member>
+  <member name="setup" isattr="false">
+    <summary>当Arduino程序开始运行时会调用setup()函数。通常我们setup()函数其中初始化一些变量、引脚状态及一些调用的库等。
+当Arduino控制器通电或复位后，setup函数会运行一次。</summary>
+    <returns datatype="" />
+  </member>
+  <define value="" name="LED_BUILTIN">大多数Arduino板都有一个与电阻串联的板上LED引脚。该常数LED_BUILTIN是板载LED连接到的引脚的编号。大多数电路板的此LED连接到数字引脚13。</define>
+</GacHelp>

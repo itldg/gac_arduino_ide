@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GacHelp xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FileName>help\ArduinoSystem\USBAPI.xml</FileName>
+  <inlude>inttypes</inlude>
+  <inlude>pgmspace</inlude>
+  <inlude>eeprom</inlude>
+  <inlude>interrupt</inlude>
+  <inlude>delay</inlude>
+  <inlude>Arduino</inlude>
+  <inlude>USBDesc</inlude>
+  <inlude>USBCore</inlude>
+  <class name="USBDevice_" summary="" static="false">
+    <member name="configured" static="false" isattr="false">
+      <summary />
+      <returns datatype="bool" />
+    </member>
+    <member name="attach" static="false" isattr="false">
+      <summary />
+      <returns datatype="void" />
+    </member>
+    <member name="detach" static="false" isattr="false">
+      <summary />
+      <returns datatype="void" />
+    </member>
+    <member name="poll" static="false" isattr="false">
+      <summary />
+      <returns datatype="void" />
+    </member>
+    <member name="wakeupHost" static="false" isattr="false">
+      <summary />
+      <returns datatype="bool" />
+    </member>
+    <member name="isSuspended" static="false" isattr="false">
+      <summary />
+      <returns datatype="bool" />
+    </member>
+  </class>
+  <class name="Serial_" summary="" static="false">
+    <member name="begin" static="false" isattr="false">
+      <summary />
+      <returns datatype="void" />
+      <param datatype="unsigned" name="long" default="" />
+    </member>
+    <member name="begin" static="false" isattr="false">
+      <summary />
+      <returns datatype="void" />
+      <param datatype="unsigned" name="long" default="" />
+      <param datatype="" name="uint8_t" default="" />
+    </member>
+    <member name="end" static="false" isattr="false">
+      <summary />
+      <returns datatype="void" />
+      <param datatype="" name="" default="" />
+    </member>
+    <member name="Print" static="false" isattr="false">
+      <summary />
+      <returns datatype="using" />
+    </member>
+    <member name="bool" static="false" isattr="false">
+      <summary />
+      <returns datatype="operator" />
+    </member>
+    <member name="_rx_buffer_head" static="false" isattr="false">
+      <summary />
+      <returns datatype="volatile uint8_t" />
+    </member>
+    <member name="_rx_buffer_tail" static="false" isattr="false">
+      <summary />
+      <returns datatype="volatile uint8_t" />
+    </member>
+    <member name="_rx_buffer" static="false" isattr="false">
+      <summary />
+      <returns datatype="unsigned char" />
+    </member>
+    <member name="readBreak" static="false" isattr="false">
+      <summary />
+      <returns datatype="int32_t" />
+    </member>
+    <member name="baud" static="false" isattr="false">
+      <summary />
+      <returns datatype="uint32_t" />
+    </member>
+    <member name="stopbits" static="false" isattr="false">
+      <summary />
+      <returns datatype="uint8_t" />
+    </member>
+    <member name="paritytype" static="false" isattr="false">
+      <summary />
+      <returns datatype="uint8_t" />
+    </member>
+    <member name="numbits" static="false" isattr="false">
+      <summary />
+      <returns datatype="uint8_t" />
+    </member>
+    <member name="dtr" static="false" isattr="false">
+      <summary />
+      <returns datatype="bool" />
+    </member>
+    <member name="rts" static="false" isattr="false">
+      <summary />
+      <returns datatype="bool" />
+    </member>
+    <member name="enum" static="false" isattr="false">
+      <summary />
+      <returns datatype="" />
+    </member>
+    <member name="enum" static="false" isattr="false">
+      <summary />
+      <returns datatype="" />
+    </member>
+    <member name="_rx_buffer_head" static="false" isattr="true">
+      <summary />
+      <returns datatype="volatile uint8_t" />
+    </member>
+    <member name="_rx_buffer_tail" static="false" isattr="true">
+      <summary />
+      <returns datatype="volatile uint8_t" />
+    </member>
+    <inheritance>Stream</inheritance>
+  </class>
+  <member name="USBDevice_" static="false" isattr="false">
+    <summary />
+    <returns datatype="" />
+  </member>
+  <member name="Serial_" static="false" isattr="false">
+    <summary />
+    <returns datatype="" />
+  </member>
+  <extern name="USBDevice" class="USBDevice_" />
+  <extern name="Serial" class="Serial_" />
+  <define value="64" name="USB_EP_SIZE" />
+  <define value="16" name="SERIAL_BUFFER_SIZE" />
+  <define value="64" name="SERIAL_BUFFER_SIZE" />
+  <define value="0x80" name="TRANSFER_PGM" />
+  <define value="0x40" name="TRANSFER_RELEASE" />
+  <define value="0x20" name="TRANSFER_ZERO" />
+  <enums name="" summary="">
+    <enum name="ONE_STOP_BIT" value="0" />
+    <enum name="ONE_AND_HALF_STOP_BIT" value="1" />
+    <enum name="TWO_STOP_BITS" value="2" />
+  </enums>
+  <enums name="" summary="">
+    <enum name="NO_PARITY" value="0" />
+    <enum name="ODD_PARITY" value="1" />
+    <enum name="EVEN_PARITY" value="2" />
+    <enum name="MARK_PARITY" value="3" />
+    <enum name="SPACE_PARITY" value="4" />
+  </enums>
+</GacHelp>
